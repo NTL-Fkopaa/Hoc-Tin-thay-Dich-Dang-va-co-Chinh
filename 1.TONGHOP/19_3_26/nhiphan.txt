@@ -1,0 +1,17 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+void h(unsigned long long n){
+  if(n==0) return;
+  h(n/2);
+  cout<<(n%2);
+}
+
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    long long  n;
+    cin>>n;
+    h(n);
+    return 0;
+}

@@ -1,0 +1,87 @@
+nhiphan	5:
+#include<bits/stdc++.h>
+using namespace std;
+int a[1000007];int n;
+int main() {
+    cin>>n;
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+    int low = 0, h = n - 1;
+    int r = n; 
+
+    while (low <= h) {
+        int mid = low + (h - low) / 2;
+
+        if (a[mid] == 0) {
+            r = mid;
+            h = mid - 1;
+        } else {
+            low = mid + 1;
+        }
+    }
+
+    cout << r;
+    return 0;
+}
+
+
+nhiphan 6:
+#include<bits/stdc++.h>
+using namespace std;
+long long a[100000], b[100000],n;
+int main() 
+{
+  cin >> n;
+  for (int i = 0; i < n; i++) {
+    cin >> a[i];
+    b[i] = a[i];
+}
+  sort(b, b + n);
+  for (int i = 0; i < n; i++) {
+    long long *m = upper_bound(b, b + n, a[i]);
+    if (m == b + n)
+        cout << -1;
+    else
+        cout << *m;
+
+    if (i < n - 1) cout << " ";
+}
+}
+
+
+nhiphan 7:
+#include<bits/stdc++.h>
+using namespace std;
+int a[100005];
+int main() {
+
+    int n;
+    cin>>n;
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+
+    if (n == 1) {
+        cout << 0;
+        return 0;
+    }
+
+    int l = 0, r = n - 1;
+    while (l < r) {
+        int m = (l + r) / 2;
+
+        if (a[m] < a[m + 1]) {
+            l = m + 1;
+        } else {
+            r = m;
+        }
+    }
+
+    cout << l;
+
+    return 0;
+}
+
+
+nhiphan8:

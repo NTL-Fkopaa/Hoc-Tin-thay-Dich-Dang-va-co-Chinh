@@ -1,0 +1,105 @@
+///-----Bai 1:Tong cac phan tu-----
+#include <iostream>
+using namespace std;
+using ll=long long;
+int main(){
+    ll n, m; 
+    cin>>n>>m;
+    ll a[1000][1000];
+    ll sum=0;
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < m; j++){
+            cin >> a[i][j];
+            sum+= a[i][j];
+
+        }}
+    cout<<sum<<endl;
+}
+
+///-----Bai 2:Tim so lon nhat-----
+#include <iostream>
+using namespace std;
+using ll=long long;
+int main(){
+    ll n, m; 
+    cin>>n>>m;
+    ll a[1000][1000];
+    ll r=0;
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < m; j++){
+            cin >> a[i][j];
+            r = max(r, a[i][j]);
+        }}
+    cout<<r<<endl;
+    
+}
+
+///-----Bai 3-----
+#include <iostream>
+using namespace std;
+using ll=long long;
+int main(){
+    ll n, m; 
+    cin>>n>>m;
+    ll a[1000][1000];
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < m; j++){
+            cin>> a[i][j];
+        }
+    }
+    for (int i=0;i<n;i++) {
+        ll sum = 0; 
+        for (int j=0;j<m;j++) {
+            sum+=a[i][j]; 
+        }
+        
+        cout<<sum<<endl;
+    }
+    
+}
+
+-----Bài 4-------
+#include <iostream>
+using namespace std;
+using ll=long long;
+int main(){
+    ll n, m; 
+    cin>>n>>m;
+    ll a[1000][1000];
+    ll r=0,s=0;
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < m; j++){
+            cin >> a[i][j];
+
+        }}
+    for(int i = 0; i <=m; i++){
+      s=0;
+        for(int j = 0; j <=n; j++){
+            s=max(s,a[j][i]);
+        }
+        r+=s;
+    }
+    cout<<r<<endl;
+}
+
+-----bai 5-------
+#include <iostream>
+using namespace std;
+using ll=long long;
+int main(){
+    ll n, m; 
+    cin>>n>>m;
+    ll r = 0;
+    ll a[1000][1000];
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < m; j++){
+            cin>>a[i][j];
+            if (a[i][j]%2==0){
+              r+=1;
+            }
+        }
+    }
+    cout<<r<<endl;
+}
+
+-----bai 6-----

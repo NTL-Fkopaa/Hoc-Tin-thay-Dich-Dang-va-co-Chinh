@@ -1,0 +1,49 @@
+Bài 1:
+
+#include <iostream>
+#include <algorithm> 
+using namespace std;
+
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    int n;
+    cin>>n;
+    int r = 0;
+    for (int i = 0; i < n; i++) {
+        int a;
+        cin >> a;
+        if (a > r) {
+            r = a;
+        }
+        cout << r << (i == n - 1 ? "" : " ");
+    }
+
+    return 0;
+}
+
+
+Bài 2:
+#include <iostream>
+using namespace std;
+
+int main() 
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    long long n,i;
+    cin >> n;
+    long long q,s[n+1],a,b;
+    s[0]=0;
+    for(i=0; i<n; i++){
+        cin >> a;
+        s[i+1]=s[i]+a;
+    }
+    long long l, r;
+    cin >> q;
+    for(i=0; i<q; i++){
+        cin >> l >> r;
+        cout << s[r]-s[l-1] << '\n';
+    }
+    return 0;
+}
