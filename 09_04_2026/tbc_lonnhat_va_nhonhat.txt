@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+using namespace std;
+int a[100000],n
+
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cin>>n;
+    
+    
+    for(int i(1); i<=n;i++){
+      cin>>a[i];
+      a[i] += a[i-1];
+   }
+   
+    int sum = 0;
+    for(int i = 1; i <= n;i++)
+	    sum += a[i];
+    double tbc = (double)sum/n;
+    
+    double mn = 1e9, mx = -1e9;
+    for(int i(1);i<=n;i++){
+      for(int j(i+1);j<=n;j++){
+        tbc = (double)(a[j] -a[i -1])/(j - i + 1);
+		    mn = min(tbc, mn);
+		    mx = max(tbc, mx);
+      }
+    }
+  
+    cout << fixed << setprecision(3)<<mn<<" "<<mx;
+   
+    return 0;
+}

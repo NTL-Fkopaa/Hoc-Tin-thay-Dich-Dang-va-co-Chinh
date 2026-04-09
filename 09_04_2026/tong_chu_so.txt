@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+using namespace std;
+int s[100001];
+
+int tcs(int k){
+	  int sum = 0;
+	  while(k > 0){
+	  sum+= k % 10; k = k/10;
+  }
+  return sum;
+}
+
+int main()
+{
+    int k, l, r;
+    int n;
+    cin >> n;
+    int a[100001];
+    s[0] = 0;
+    for(int i = 1; i <= 100000; i++)
+    {
+        int k = i;
+        while(k >= 10) k = tcs(k);
+        a[i] = k;
+        s[i] = s[i - 1] + a[i];
+    }
+
+    for(int i = 1; i <= n; i++)
+    {
+        cin >> l >> r;
+        cout << s[r] - s[l - 1] << endl;
+    }
+}

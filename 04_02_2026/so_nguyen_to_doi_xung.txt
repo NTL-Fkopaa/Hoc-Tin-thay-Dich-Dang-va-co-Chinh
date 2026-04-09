@@ -1,0 +1,43 @@
+#include <bits/stdc++.h>
+using namespace std;
+const int N =1e7+1;
+int n,p[N];
+void h(){
+  for (int i=1;i<N;i++) p[i]=true;
+  p[1]=false;
+  for (int i =2;i*i<=N;i++){
+    if(p[i]){
+      for (int j=i*i;j<N;j+=i)p[j]=false;
+    }
+  }
+}
+
+
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    h();
+    cin>>n;
+    for(int i=2;i<=n;i++){
+      if(p[i]){
+        int b=0;
+        int gi=i;
+        int t=i; 
+
+        while (t!=0) {
+            int c=t%10;
+            b=b*10+c;
+            t/=10;
+        }
+
+        if (b<N&&p[b]) { 
+            cout<<i<<" ";
+        }
+        }
+    }
+    
+    
+    
+    return 0;
+}
+

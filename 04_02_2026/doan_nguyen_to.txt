@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+using namespace std;
+const int N = 1e7 + 1;
+int d[N], L, R, n, s[N];
+
+void Sieve(int L, int R)
+{
+    fill(d, d + (R - L + 1), 1);
+    if(L == 1) d[0] = 0;
+    for(int i = 2; i * i <= R; i++)
+    {
+        int x = (L + i - 1) / i * i;
+        for(int j = max(i * i, x); j <= R; j += i)
+            d[j - L] = 0;
+    }
+}
+
+int main()
+{
+    cin >> n;
+    int cnt = 0;
+    while(n--)
+    {
+        cin >> L >> R;
+        Sieve(L, R);
+        int cnt = 0;
+        for(int i = 0; i <= R - L; i++)
+            if(d[i]) cnt++;
+        cout << cnt << endl;
+    }
+}

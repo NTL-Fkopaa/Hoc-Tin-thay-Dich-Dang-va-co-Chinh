@@ -1,0 +1,25 @@
+#include <iostream>
+#include <algorithm>
+
+using namespace std;
+
+int main() {
+    int a, b, c, d;
+    cin>>a>>b>>c>>d;
+
+    int diff1 = b - a;
+    int diff2 = c - b;
+    int diff3 = d - c;
+
+    int r = min({diff1, diff2, diff3});
+
+    if (diff1 > r) {
+        cout << a + r << endl;
+    } else if (diff2 > r) {
+        cout << b + r << endl;
+    } else {
+        cout << c + r << endl;
+    }
+
+    return 0;
+}

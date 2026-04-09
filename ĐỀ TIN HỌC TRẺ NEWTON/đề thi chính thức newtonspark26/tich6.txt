@@ -1,0 +1,37 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int main() {
+    long long N;
+    cin>>N;
+
+    long long MOD = 2026;
+    vector<long long> count(6, 0);
+
+    long long basic = N / 6;
+    for (int r = 0; r < 6; ++r) {
+        count[r] = basic;
+    }
+    
+    for (int r = 1; r <= N % 6; ++r) {
+        count[r % 6]++;
+    }
+
+    long long ans = 0;
+    
+    for (int i = 0; i < 6; ++i) {
+        for (int j = 0; j < 6; ++j) {
+            if ((i * j) % 6 == 0) {
+              
+                long long b = (count[i] % MOD) * (count[j] % MOD);
+                ans = (ans + b) % MOD;
+            }
+        }
+    }
+
+    cout << ans << endl;
+
+    return 0;
+}
